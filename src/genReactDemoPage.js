@@ -1,8 +1,8 @@
 const { resolvePath, writeFile, readDir } = require('./utils');
 
-function genJSX(components) {
+function genJSX(components, dir) {
     const result = components.reduce((v, component) => {
-        v.imports.push(`import ${component} from '@shuyun-icons/react/${component}';`);
+        v.imports.push(`import ${component} from '@shuyun-icons/react/${dir}/${component}';`);
         v.components.push(`<${component} />`);
         return v;
     }, {
@@ -22,16 +22,18 @@ ReactDOM.render(
 );`);
 }
 
-async function genReactDemoPage() {
-    const originalComponents = await readDir(resolvePath(__dirname, '../dist/react/brands'));
+async function genReactDemoPage(dir) {
+    const originalComponents = await readDir(resolvePath(__dirname, `../dist/react/${dir}`));
     const components = originalComponents.map(item => {
         return item.filename.replace('.jsx', '');
     });
 
-    const jsx = genJSX(components);
-    const demoPagePath = resolvePath(__dirname, '../demo/react/index.jsx');
+    const jsx = genJSX(components, dir);
+    const demoPagePath = resolvePath(__dirname, `../demo/react/${dir}.jsx`);
     await writeFile(demoPagePath, jsx);
 }
 
 
-genReactDemoPage();
+genReactDemoPage('brands');
+genReactDemoPage('regular');
+genReactDemoPage('solid');
