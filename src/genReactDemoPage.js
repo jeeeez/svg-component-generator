@@ -29,10 +29,9 @@ async function genReactDemoPage() {
     });
 
     const jsx = genJSX(components);
-    console.log(jsx);
     const demoPagePath = resolvePath(__dirname, '../demo/react/index.jsx');
     await writeFile(demoPagePath, jsx);
 }
 
 
-genReactDemoPage(['Index']);
+genReactDemoPage();
