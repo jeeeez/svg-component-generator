@@ -1,8 +1,8 @@
 {
     "name": "svg-component-generator",
-    "version": "1.0.0",
+    "version": "0.0.2",
     "description": "",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
@@ -12,7 +12,6 @@
         "babel-generator": "^6.26.1",
         "babel-traverse": "^6.26.0",
         "babylon": "^6.18.0",
-        "htmlparser2": "^3.9.2",
-        "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git"
+        "htmlparser2": "^3.9.2"
     }
 }
