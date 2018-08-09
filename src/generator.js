@@ -24,7 +24,8 @@ async function genSvgHtml(src) {
     const html = await readFile(src);
 
     const svgHTML = html.replace(/\<svg/, '<svg {...props} style={styles}');
-    return svgHTML.match(/(\<svg.*\<\/svg\>)/g)[0];
+
+    return svgHTML.match(/(\<svg[\s\S]*\<\/svg\>)/g)[0];
 }
 
 
@@ -39,6 +40,7 @@ async function genSvgIconComponent({
     const ast = parse(svgIconCode, {
         sourceType: 'module'
     });
+
 
     traverse(ast, {
         enter(path) {
