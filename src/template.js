@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const styles = {
+const DefaultStyles = {
     width: '1em',
     height: '1em',
     verticalAlign: 'middle',
@@ -9,6 +9,8 @@ const styles = {
 };
 
 
-export default function ComponentName(props) {
+export default function ComponentName(props = {}) {
+    const styles = Object.assign(DefaultStyles, props.style);
+
     return SVGHTLM;
 }
