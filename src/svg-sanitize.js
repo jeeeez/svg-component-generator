@@ -1,6 +1,6 @@
 const sanitizeHtml = require('sanitize-html');
 
-exports.sanitize = async function sanitizeSvg(html) {
+exports.sanitize = function sanitizeSvg(html) {
     const code = sanitizeHtml(html, {
         allowedTags: ['svg', 'defs', 'path'],
         allowedAttributes: {
@@ -9,6 +9,5 @@ exports.sanitize = async function sanitizeSvg(html) {
         }
     });
 
-    return code;
+    return code.replace('viewbox', 'viewBox');
 }
-
