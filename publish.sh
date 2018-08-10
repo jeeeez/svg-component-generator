@@ -9,3 +9,6 @@ cp README.md dist/
 
 
 npm publish dist
+
+# cnpm sync svg-component-generator
+curl -X PUT https://npm.taobao.org/sync/svg-component-generator
