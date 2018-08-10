@@ -1,4 +1,1 @@
-<svg viewBox="0 0 1024 1024">
-    <path d="M512 56c-252 0-456 204-456 456s204 456 456 456 456-204 456-456-204-456-456-456z m0 840c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z"></path>
-    <path d="M676 480h-328c-20 0-36 16-36 36s16 36 36 36h328c20 0 36-16 36-36s-16-36-36-36z"></path>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1533802922724" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4916" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><defs><style type="text/css"></style></defs><path d="M512 56c-252 0-456 204-456 456s204 456 456 456 456-204 456-456-204-456-456-456z m0 840c-212 0-384-172-384-384s172-384 384-384 384 172 384 384-172 384-384 384z" fill="#333333" p-id="4917"></path><path d="M676 480h-328c-20 0-36 16-36 36s16 36 36 36h328c20 0 36-16 36-36s-16-36-36-36z" fill="#333333" p-id="4918"></path></svg>

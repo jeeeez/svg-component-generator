@@ -4,7 +4,7 @@
     "description": "",
     "main": "src/index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "node task.run.js"
     },
     "author": "",
     "license": "MIT",
@@ -12,6 +12,6 @@
         "babel-generator": "^6.26.1",
         "babel-traverse": "^6.26.0",
         "babylon": "^6.18.0",
-        "htmlparser2": "^3.9.2"
+        "sanitize-html": "^1.18.4"
     }
 }

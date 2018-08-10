@@ -2,7 +2,6 @@ const genSvgIconComponent = require('./generator');
 const { resolvePath, removeDir, createDir, readDir } = require('./utils');
 
 
-
 async function runDirTask(sourceDir, outputDir, suffix) {
     await createDir(outputDir);
 
