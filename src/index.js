@@ -1,4 +1,5 @@
 const genSvgIconComponent = require('./generator');
+const genSvgIconComponentType = require('./generate-types');
 const { resolvePath, removeDir, createDir, readDir } = require('./utils');
 
 
@@ -16,6 +17,11 @@ async function runDirTask(sourceDir, outputDir, suffix) {
                     componentName,
                     iconPath: filePath,
                     outputPath: `${outputDir}/${componentName}.${suffix}`
+                });
+
+                genSvgIconComponentType({
+                    componentName,
+                    outputPath: `${outputDir}/${componentName}.d.ts`
                 });
             }
         } else {
