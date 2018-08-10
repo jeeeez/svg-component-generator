@@ -2,13 +2,8 @@ const genSvgIconComponent = require('./generator');
 const { resolvePath, removeDir, createDir, readDir } = require('./utils');
 
 
-exports.run =  async function run(sourceDir, outputDir) {
-    await removeDir(outputDir);
-    await runDirTask(sourceDir, outputDir);
-}
 
-
-async function runDirTask(sourceDir, outputDir) {
+async function runDirTask(sourceDir, outputDir, suffix) {
     await createDir(outputDir);
 
     const files = await readDir(sourceDir);
@@ -21,7 +16,7 @@ async function runDirTask(sourceDir, outputDir) {
                 genSvgIconComponent({
                     componentName,
                     iconPath: filePath,
-                    outputPath: `${outputDir}/${componentName}.jsx`
+                    outputPath: `${outputDir}/${componentName}.${suffix}`
                 });
             }
         } else {
@@ -38,4 +33,10 @@ function parseComponentName(filename) {
     }).replace(/(^\w)/, (all, w) => {
         return w.toUpperCase();
     }).replace(/\-/g, '');
+}
+
+
+exports.run = async function run(sourceDir, outputDir, suffix = 'jsx') {
+    await removeDir(outputDir);
+    await runDirTask(sourceDir, outputDir, suffix);
 }

@@ -7,7 +7,7 @@
 
 ## Usage
 ```javascript
-import generator from 'svg-component-generator';
+import * as generator from 'svg-component-generator';
 
 generator.run(svgPath, targetComponentPath);
 ```
