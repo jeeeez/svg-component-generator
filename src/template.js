@@ -10,7 +10,7 @@ const DefaultStyles = {
 
 
 export default function ComponentName(props = {}) {
-    const styles = Object.assign(DefaultStyles, props.style);
+    const styles = Object.assign({}, DefaultStyles, props.style);
 
     return SVGHTLM;
 }
