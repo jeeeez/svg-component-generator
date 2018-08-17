@@ -9,13 +9,15 @@ function resolvePath(url) {
 
 async function genSvgIconComponentType({
     componentName,
-    outputPath
+    outputPath,
+    esOutputPath
 }) {
     const svgIconCode = await readFile(resolvePath('./interface.ts'));
 
     const componentCode = svgIconCode.replace('ComponentName', componentName);
 
     writeFile(outputPath, componentCode);
+    writeFile(esOutputPath, componentCode);
 }
 
 

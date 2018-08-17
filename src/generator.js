@@ -4,6 +4,7 @@ const traverse = require('babel-traverse').default;
 const generator = require('babel-generator').default;
 const { writeFile, readFile } = require('./utils');
 const { sanitize } = require('./svg-sanitize');
+const { convertToJs } = require('./convert-to-js');
 
 
 function resolvePath(url) {
@@ -21,7 +22,8 @@ async function genSvgHtml(src) {
 async function genSvgIconComponent({
     iconPath,
     componentName,
-    outputPath
+    outputPath,
+    esOutputPath
 }) {
     const html = await genSvgHtml(iconPath);
 
@@ -47,9 +49,12 @@ async function genSvgIconComponent({
     });
 
 
-    const componentCode = generator(ast).code;
+    const jsxComponentCode = generator(ast).code;
 
-    writeFile(outputPath, componentCode);
+    writeFile(esOutputPath, jsxComponentCode);
+
+    const jsComponentCode = convertToJs(jsxComponentCode);
+    writeFile(outputPath, jsComponentCode);
 }
 
 

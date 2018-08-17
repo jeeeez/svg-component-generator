@@ -1,5 +1,11 @@
 import * as React from 'react';
 
-export default class ComponentName extends React.Component<any, any> {
+export interface IconProps {
+    className?: string;
+    style: React.CSSProperties;
+    onClick?: React.MouseEventHandler<any>;
+}
+
+export default class ComponentName extends React.Component<IconProps, any> {
 
 }

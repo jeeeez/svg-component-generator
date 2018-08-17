@@ -1,4 +1,5 @@
 const fs = require('fs');
+const mkdirp = require('mkdirp');
 
 function resolvePath(...props) {
     return require('path').resolve(...props);
@@ -35,9 +36,7 @@ exports.readFile = readFile;
 
 async function createDir(dir) {
     return new Promise(async (resolve) => {
-        if (fs.existsSync()) return resolve();
-
-        fs.mkdir(dir, err => {
+        mkdirp(dir, err => {
             if (err) throw err;
 
             resolve();
