@@ -1,6 +1,6 @@
 # svg-component-generator
 
-> A library to generate Icon Components base SVG files.
+> A library to generate React Icon Components base SVG files.
 
 ## Install
 `npm i svg-component-generator`

@@ -8,6 +8,13 @@
     },
     "author": "",
     "license": "MIT",
+    "keywords": [
+        "react",
+        "svg",
+        "Icon",
+        "component",
+        "generator"
+    ],
     "dependencies": {
         "babel-core": "^6.26.3",
         "babel-generator": "^6.26.1",
