@@ -2,10 +2,10 @@
 
 <div align="center">
     <p>A library to generate React Icon Components base SVG files.</p>
-    [![npm package](https://img.shields.io/npm/v/svg-component-generator/latest.svg)](https://www.npmjs.com/package/svg-component-generator)
-</div>
->
 
+[![npm package](https://img.shields.io/npm/v/svg-component-generator/latest.svg)](https://www.npmjs.com/package/svg-component-generator)
+
+</div>
 
 
 ## Install
