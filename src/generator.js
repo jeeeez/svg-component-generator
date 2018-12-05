@@ -14,8 +14,8 @@ function resolvePath(url) {
 
 async function genSvgHtml(src) {
     const html = await readFile(src);
-
-    return sanitize(html).replace(/\<svg/, '<svg {...props} style={styles}');
+    const withColor = src.includes('WithColor');
+    return sanitize(html, withColor).replace(/\<svg/, '<svg {...props} style={styles}');
 }
 
 
