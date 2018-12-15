@@ -8,7 +8,10 @@ function resolvePath(...props) {
 exports.resolvePath = resolvePath;
 
 async function writeFile(src, content) {
-    const exists = await fs.exists(src);
+    const exists = await fs.exists(src, err => {
+        if (err) throw err;
+    });
+
     if (!exists) {
         await fs.createWriteStream(src, err => {
             if (err) throw err;
