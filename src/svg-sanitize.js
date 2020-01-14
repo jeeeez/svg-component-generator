@@ -5,7 +5,7 @@ exports.sanitize = function sanitizeSvg(html, withColor) {
         allowedTags: ['svg', 'defs', 'path'],
         allowedAttributes: {
             svg: ['viewbox'],
-            path: withColor ? ['d', 'fill'] : ['d']
+            path: withColor ? ['d', 'fill', 'opacity'] : ['d', 'opacity']
         }
     });
 
